@@ -10,7 +10,7 @@ const port = 8080;
 app.use(cors());
 app.use(bodyparser.json())
 
-app.post("/send-sms", async (req, res) => {
+app.post('/send-sms', async (req, res) => {
     const natanggap = req.body;
 
     if(natanggap && natanggap.message && natanggap.phoneNum){
