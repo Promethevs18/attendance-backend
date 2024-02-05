@@ -34,7 +34,7 @@ app.post("/send-sms", async (req, res) => {
     }
 });
 
-app.get("/do-ai", (req, res) => {
+app.get('/do-ai', (req, res) => {
     try {
        res.send("Wazzup, mah nigga?")
     } catch (error) {
