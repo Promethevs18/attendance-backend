@@ -43,6 +43,11 @@ app.get("/do-ai", (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send("Backend running nominal")
+})
+
+
 app.listen(port, () => {
     console.log(`Server is now listening at ${port}`)
 });
