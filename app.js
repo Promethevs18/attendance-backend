@@ -16,8 +16,8 @@ app.post('/send-sms', async (req, res) => {
     if(natanggap && natanggap.message && natanggap.phoneNum){
 
     try {
-        const accountSid = 'AC8315974106a1f479fc54523580a28064';
-        const authToken = '8d7c22642ec477493163b5e755409864';
+        const accountSid = 'AC2058d079a5f9ea11fb72693fd8160387';
+        const authToken = 'b31149d7256b367c3cd6e8daf7a0259a';
         const client = twilio(accountSid, authToken);
 
        await client.messages.create({
