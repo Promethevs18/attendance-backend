@@ -17,7 +17,7 @@ app.post('/send-sms', async (req, res) => {
 
     try {
         const accountSid = 'AC7333bb8c337e7511bd48d736931b645e';
-        const authToken = 'abc848d69e4ecb0ac2d7d8e05d39269a';
+        const authToken = '18e719430e9ea87d9b59d110ea2f9853';
         const client = twilio(accountSid, authToken);
 
        await client.messages.create({
