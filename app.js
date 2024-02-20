@@ -16,13 +16,13 @@ app.post('/send-sms', async (req, res) => {
     if(natanggap && natanggap.message && natanggap.phoneNum){
 
     try {
-        const accountSid = 'AC2058d079a5f9ea11fb72693fd8160387';
-        const authToken = 'b31149d7256b367c3cd6e8daf7a0259a';
+        const accountSid = 'AC7333bb8c337e7511bd48d736931b645e';
+        const authToken = 'abc848d69e4ecb0ac2d7d8e05d39269a';
         const client = twilio(accountSid, authToken);
 
        await client.messages.create({
             body: natanggap.message,
-            from: '+14153902337',
+            from: '+13312156754',
             to: natanggap.phoneNum
         });
 
@@ -30,6 +30,7 @@ app.post('/send-sms', async (req, res) => {
     } catch (error) {
         res.json({success: false, message: `Sending SMS error due to: ${error}`})
         res.status(500).send("Internal Server Error");
+        console.log(error)
     }
     }
 });
