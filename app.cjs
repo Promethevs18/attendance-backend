@@ -1,14 +1,17 @@
-import express from "express";
-import cors from 'cors'
-import twilio from "twilio"
-import bodyparser from "body-parser"
+require('dotenv').config()
 
+const express = require('express');
+const port = 8080;
+const sid = process.env.ACCOUNTSID
+const token = process.env.TOKEN
+
+const cors = require("cors");
+const twilio = require("twilio");
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = 8080;
-
-app.use(cors());
-app.use(bodyparser.json())
+app.use(cors())
+app.use(bodyParser.json())
 
 app.post('/send-sms', async (req, res) => {
     const natanggap = req.body;
@@ -16,8 +19,8 @@ app.post('/send-sms', async (req, res) => {
     if(natanggap && natanggap.message && natanggap.phoneNum){
 
     try {
-        const accountSid = 'AC7333bb8c337e7511bd48d736931b645e';
-        const authToken = '18e719430e9ea87d9b59d110ea2f9853';
+        const accountSid = sid
+        const authToken = token
         const client = twilio(accountSid, authToken);
 
        await client.messages.create({
